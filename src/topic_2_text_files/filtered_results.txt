@@ -1,17 +1,10 @@
 The Choice (Messy Version)
-by W. B. Yeats (public domain)
-
 The intellect of man is forced to choose!!!!
 Perfection of,,,,,,, the life, or of,,,,,, the work,,,,
 And if it take the second must refuse
 A heavenly mansion, raging in the dark????
-
     When all that story’s finished, what’s the news?
 In luck or out the toil has left its MARK:::::
-That old perplexity an empty purse,
 Or the day’s vanity, the night’s remorse!!!!
 
-#BADLINE: this should be removed
-   (extra   spaces everywhere)
---random symbols--@@@###$$$
-
+# File processed on 2025-11-18T23:27:10.487929
