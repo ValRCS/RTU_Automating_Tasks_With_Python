@@ -1,2 +1,21 @@
-# RTU_Automating_Tasks_With_Python
-RTU course on automating various tasks using Python
+<p align="center">
+  <img src="img/logo.png" width="340" alt="Automating Tasks using Python Logo">
+</p>
+
+<h1 align="center">Automating Tasks using Python</h1>
+
+<p align="center">
+  Practical 10-part course on automating real-world tasks using Python, with examples on Windows and VS Code.
+</p>
+
+---
+
+## 📘 About This Course
+
+This repository contains all materials for the **Automating Tasks using Python** course:
+
+- Example Python scripts  
+- Data files for exercises  
+- Project templates  
+- Notebooks (optional)  
+- Slides (optional)
