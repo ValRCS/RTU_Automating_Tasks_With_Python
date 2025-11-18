@@ -5,7 +5,7 @@
 <h1 align="center">Automating Tasks using Python</h1>
 
 <p align="center">
-  Practical 10-part course on automating real-world tasks using Python, with examples on Windows and VS Code.
+  Practical 10-part course on automating real-world tasks using Python, with examples on Windows (most applicable to MacOS as well) and VS Code.
 </p>
 
 ---
