@@ -19,3 +19,30 @@ This repository contains all materials for the **Automating Tasks using Python**
 - Project templates  
 - Notebooks (optional)  
 - Slides (optional)
+
+---
+
+## 🧩 Topics Covered
+
+### **1️⃣ Getting Started with Python & VS Code**
+- Installing Python on Windows  
+- Setting up VS Code for Python development  
+- Running your first `.py` script  
+- Basic terminal usage  
+- Understanding Python as an automation tool  
+
+### **2️⃣ Working with Text Files & String Processing**
+- Reading and writing text files  
+- String cleanup and processing  
+- Lists and loops for multi-line file manipulation  
+- Conditional logic (`if / elif / else`)  
+- Automating simple text-related tasks  
+
+### **3️⃣ Reading & Writing Excel Files (openpyxl) + Dictionaries**
+- Reading Excel sheets with `openpyxl`  
+- Writing data, adding rows, editing cells  
+- Inserting formulas programmatically  
+- Introduction to dictionaries (`{key: value}`)  
+- Organizing and processing structured data  
+
+---
