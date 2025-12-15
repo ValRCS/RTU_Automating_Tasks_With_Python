@@ -226,3 +226,7 @@ src/topic_8_desktop_gui_automation_pyautogui/screen.png
 src/topic_9_file_email_system_automation/example.txt
 src/topic_9_file_email_system_automation/unfiltered
 src/topic_9_file_email_system_automation/filtered
+src/topic_10_json_api_based_automation/using_openai_api.ipynb
+src/topic_10_json_api_based_automation/hourly_weather.csv
+src/topic_10_json_api_based_automation/sample.json
+src/topic_10_json_api_based_automation/using_JSON_APIs.ipynb
