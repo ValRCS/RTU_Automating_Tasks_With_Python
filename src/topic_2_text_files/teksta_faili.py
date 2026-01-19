@@ -178,3 +178,21 @@ with open("a_lines.txt", "w", encoding="utf-8") as file:
     for a_line in a_lines: # ejam cauri atrastajām A rindiņām
         file.write(a_line) # ierakstām katru rindiņu failā
     print("A rindiņas ir saglabātas failā a_lines.txt.")
+
+# vispārināsim meklēšanu
+# adata = input("Ievadi burtu vai vārdu kuru meklēt rindiņās: ") # ja gribam interaktīvi
+adata = "the" # ja gribam fiksētu meklējamo vārdu
+matching_lines = [] # tukšs saraksts
+for line in lines:
+    if adata.lower() in line.lower(): # meklējam neatkarīgi no lieluma
+        matching_lines.append(line)
+# cik atradām?
+print(f"Atrastas {len(matching_lines)} rindiņas ar adatu -> '{adata}':")
+print(matching_lines)
+
+# atrastās rindas mēs varam uzreiz ierakstīt ar vienu komandu
+with open("the_lines.txt", "w", encoding="utf-8") as file:
+    file.writelines(matching_lines) # ierakstām visas atrastās rindiņas uzreiz
+    # fails te vel vaļā
+# fails te vel ir ciet
+print("Rindiņas ar 'the' ir saglabātas failā the_lines.txt.")
