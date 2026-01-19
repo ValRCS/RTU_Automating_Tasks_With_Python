@@ -116,6 +116,35 @@ print(yeats_files) # izdrukājam sarakstu ar atrastajiem failiem
 # ja mums ir vismaz viens fails tad izdrukāsim tā pilno ceļu
 if len(yeats_files) > 0:
     print(f"Pirmais 'yeats' fails ir: {yeats_files[0].resolve()}")
-    pirmais_fails = yeats_files[0]
+    pirmais_fails = yeats_files[0] # taisu jaunu mainīgo ar pirmo failu sarakstā
 else:
-    print("Nav atrasts neviens 'yeats' fails.")
+    print("Nav atrasts neviens 'yeats' fails. Beidzam darbu")
+    # šeit man nav pirmais_fails mainīgā un nav arī idejas ko tur likt
+    # iziesim no programmas
+    exit() # šis iziet no Python programmas izpildes apstājas
+
+# šinī vietā es zinu ka man eksistē fails ar yeats kaut kur nosaukumā
+
+
+print("Tagad atvērsim šo failu un izlasīsim tā saturu.")
+
+# te jau beigās arī ir tas pats exit() tikai noklusēts
+
+with open(pirmais_fails, "r", encoding="utf-8") as file:
+    file_content = file.read() # nolasām visu faila saturu mainīgajā
+    print("Faila saturs ir:")
+    # fails te vel ir atvērts
+# te jau ciet, bet mēs paspējām nolasīt saturu
+
+
+print(file_content) # izdrukājam faila saturu
+
+# tikpat labi es varētu atvērt šo failu izmantojot relativo ceļu
+# ja es zinu ka fails ir patreizejā mapē
+with open("the_choice_yeats.txt", "r", encoding="utf-8") as file:
+    file_content_relative = file.read()
+
+# atkal fails ir jau aizvērts
+
+print("Faila saturs, nolasīts ar relatīvo ceļu:")
+print(file_content_relative)
