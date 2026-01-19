@@ -36,9 +36,12 @@ print(f"Saglabāsim aprakstu failā: {output_file_path}")
 with open(output_file_path, "w", encoding="utf-8") as file:
     file.write(full_description) # ierakstām aprakstu failā
     print("Apraksts ir saglabāts failā.")
+# tātad šeit man ir jau jauns fails ar aprakstu
 
 # mēs varam lietot arī relatīvo ceļu
 # vienkārši rakstīt faila nosaukumu pa tiešo
 with open("apraksts.txt", "w", encoding="utf-8") as file:
     file.write("Jauns teksts kas pārraksta iepriekšējo aprakstu.")
     print("Apraksts ir saglabāts failā, izmantojot relatīvo ceļu.")
+
+# taisam 5 min pauzi :) un tad turpinam darbu ar failiem
