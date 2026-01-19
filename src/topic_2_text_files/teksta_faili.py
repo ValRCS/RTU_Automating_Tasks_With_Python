@@ -148,3 +148,33 @@ with open("the_choice_yeats.txt", "r", encoding="utf-8") as file:
 
 print("Faila saturs, nolasīts ar relatīvo ceļu:")
 print(file_content_relative)
+
+# pārbaudīsim vai saturs ir vienāds
+if file_content == file_content_relative:
+    print("Saturs ir vienāds abos gadījumos.")
+else:
+    print("Saturs atšķiras!")
+
+# nolasīsim failu bet kā rindiņu sarakstu
+with open(pirmais_fails, "r", encoding="utf-8") as file:
+    lines = file.readlines() # nolasām visas rindiņas kā sarakstu
+# fails jau ciet bet rindiņas mums jau ir
+
+print("Faila rindiņas ir:")
+print(lines) # izdrukājam rindiņu sarakstu
+
+# atradīsim visas rindiņas kuras sākas ar lielo A burtu
+a_lines = [] # tukšs saraksts, tipiski informācijas glabāšanai
+for line in lines: # es eju rindiņam cauri pa vienai
+    # nākošo rindiņu var modificēt savām vajadzībām
+    if line.startswith("A"): # pārbaudām vai rindiņa sākas ar "A"
+        a_lines.append(line) # pievienojam sarakstam    
+
+print("Rindiņas, kas sākas ar 'A':")
+print(a_lines) # izdrukājam atrastās rindiņas
+
+# tagad ierakstīsim A rindiņas jaunā failā
+with open("a_lines.txt", "w", encoding="utf-8") as file:
+    for a_line in a_lines: # ejam cauri atrastajām A rindiņām
+        file.write(a_line) # ierakstām katru rindiņu failā
+    print("A rindiņas ir saglabātas failā a_lines.txt.")
