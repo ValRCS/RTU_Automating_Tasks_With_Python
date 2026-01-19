@@ -33,17 +33,17 @@ print(f"Saglabāsim aprakstu failā: {output_file_path}")
 
 # atvērsim jaunu (vai pārrakstīsim esošu) failu rakstīšanas režīmā
 # w nozīmē write (rakstīt)
-with open(output_file_path, "w", encoding="utf-8") as file:
-    file.write(full_description) # ierakstām aprakstu failā
-    print("Apraksts ir saglabāts failā.")
+# with open(output_file_path, "w", encoding="utf-8") as file:
+#     file.write(full_description) # ierakstām aprakstu failā
+#     print("Apraksts ir saglabāts failā.")
 # tātad šeit man ir jau jauns fails ar aprakstu
 
 # mēs varam lietot arī relatīvo ceļu
 # vienkārši rakstīt faila nosaukumu pa tiešo
 # tas nozīme ka ceļs ir relatīvs pret patreizējo ceļu, lai kas tas būtu
-with open("apraksts.txt", "w", encoding="utf-8") as file:
-    file.write("Jauns teksts kas pārraksta iepriekšējo aprakstu.")
-    print("Apraksts ir saglabāts failā, izmantojot relatīvo ceļu.")
+# with open("apraksts.txt", "w", encoding="utf-8") as file:
+#     file.write("Jauns teksts kas pārraksta iepriekšējo aprakstu.")
+#     print("Apraksts ir saglabāts failā, izmantojot relatīvo ceļu.")
 
 # taisam 5 min pauzi :) un tad turpinam darbu ar failiem
 
@@ -196,3 +196,23 @@ with open("the_lines.txt", "w", encoding="utf-8") as file:
     # fails te vel vaļā
 # fails te vel ir ciet
 print("Rindiņas ar 'the' ir saglabātas failā the_lines.txt.")
+
+# pielietojums varētu būt šāds
+# atrast visus failus ar kādu pagarinājumu
+# un tad atrast tajos failos kādu konkrētu informāciju un to saglabāt jaunos failos 
+
+# līdz šim mēs skatījam read - "r" un write režīmus "w" 
+# ir arī papildināšanas režīms "a" - append
+# tas ļauj pievienot jaunu saturu faila beigās nepārrakstot esošo saturu
+with open("apraksts.txt", "a", encoding="utf-8") as file:
+    file.write("\nŠī ir papildināta rindiņa pie esošā apraksta.")
+    # fails vēl vaļa var rakstīt vēl
+    # pierakstīsim datumu
+    from datetime import datetime # laika biblioteka ir iebūvēta bet jaimportē lai aktivizētu
+    now = datetime.now() # iegūstam pašreizējo datumu un laiku
+    file.write("\nPapildināts: {now.strftime('%Y-%m-%d %H:%M:%S')}") # te būs vienkārši teksts bez laika
+    file.write(f"\nPapildināts: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+    # ('%Y-%m-%d %H:%M:%S') nozīmē formātu GGGG-MM-DD HH:MM:SS
+    # fails te vel vaļā
+# fails te vel ir ciet
+print("Apraksts ir papildināts failā apraksts.txt.")
