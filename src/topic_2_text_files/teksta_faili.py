@@ -91,10 +91,10 @@ print(f"Kopā mazā mapē ir {total_text_file_count_maza_mape} teksta faili.")
 # pa relatīvo ceļu mēs varam arī kāpties augšup
 
 # apskatīsim cik .py faili ir vienu līmeni augstāk
-py_files_one_level_up = list(Path("..").rglob("*.py")) # viens punkts nozīmē pašreizējo mapi, divi punkti - vienu līmeni augstāk
-print("Python faili vienu līmeni augstāk ir:")
-for py_file in py_files_one_level_up:
-    print(py_file.resolve())
+# py_files_one_level_up = list(Path("..").rglob("*.py")) # viens punkts nozīmē pašreizējo mapi, divi punkti - vienu līmeni augstāk
+# print("Python faili vienu līmeni augstāk ir:")
+# for py_file in py_files_one_level_up:
+#     print(py_file.resolve())
 
 # atgriežamies pie teksta failiem:
 # izdrukāsim visu sarakstu uzreiz bez cikla
