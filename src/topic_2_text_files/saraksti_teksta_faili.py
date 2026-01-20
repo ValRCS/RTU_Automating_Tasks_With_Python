@@ -281,3 +281,71 @@ with open("the_choice_yeats.txt", encoding="utf-8") as f:
 # atkal fails ir ciet bet mums jau ir dati
 
 print(all_rows) # tas ir saraksts ar stringiem
+
+# izveidosim jaunu sarakstu kur ar rindiņām kurās var atrast vārdu vai daļu no vārda "the"
+the_lines = []
+for row in all_rows: # atkal cikls row būs individuāla rindiņa
+    # šeit mums ir pieeja kārtējai rindiņai
+    if "the" in row: # atkal šeit pielāgojam loģiku tam ko gribam atrast
+        the_lines.append(row) # pieliekam klāt mums vajadzīgo rindiņu sarakstam
+# izdrukājam jauno sarakstu
+print(the_lines)
+
+# mēs tagad gribētu šo ierakstīt jaunā failā
+# tam mums ir nepieciešama opcija atverot failu
+# vajag mode="w" - rakstīšanas mode
+# šajā režīmā mēs vai nu izveidojam jaunu failu, vai pārrakstam esošo ar jaunu saturu
+
+with open("the_lines.txt", mode="w", encoding="utf-8") as file:
+    file.write("Rindiņās ar the iekšā\n") # ievērojam ar roku rakstītu \n
+    # ja mums ir saraksts ar rindiņām tad varam izmantot writelines
+    file.writelines(the_lines)
+    # te vēl var rakstīt
+# te jau vair ne jo fails ir ciet
+
+
+# ir vēl viens failu rakstīšanas režīms, kas nevis pārraksta failu
+# bet gan lipina klāt beigās failam jaunu saturu
+# tam ir domāts režims mode="a" - append
+with open("the_lines.txt", mode="a", encoding="utf-8") as file:
+    file.write("Lipinam klāt vēl ko failam\n")
+    file.write("Lipinam klāt vēl vienu rindu failam\n")
+
+# ja jāapstrāda ļoti liels teksta fails, kurš varētu neiet atmiņā
+# tad var apstrādāt ienākošo tekstu par rindiņai
+# vienlaicigi atverot izejošo failu rakstīšanai
+
+with open("the_choice_yeats.txt", encoding="utf-8") as filein:
+    # te ir jau atvērts ienākošais fails
+    with open("clean_yeats.txt", mode="w", encoding="utf-8") as fileout:
+        # te jau atvērti abi faili
+        # ejam cauri ienākošam
+        for row in filein: # tātad mēs neglabājām saraksta bet ejam cauri pa rindiņai
+            # mūs būs divi nosācijumi lai nav tukša rinda un nav yeats iekš teksta
+            # strip() noņem visus tukšos simbolus " ", \n, \t, un vēl dažus retākus
+            # vēl pati rinda netiek modificēta
+            if len(row.strip()) > 0 and "yeats" not in row.lower():
+                # šeit mēs zinam ka row ir mums derīga
+                # uzreiz rakstam iekša izejoša failā
+                fileout.write(row)
+
+# te mums abi faili jau ir ciet
+
+# Datu tīrišiana pabeigta
+print("Tīrs Yeats pieejams clean_yeats.txt!")
+
+# klases uzdevums
+
+# Atvērt veidenbaums.txt
+# Nolasit visu saturu rindās (kā list)
+# Izveidot jaunu sarakstu ar []
+# iet cauri satura sarakstam
+# ja rinda ir dzeja tad to pielipinam jaunajam sarakstam  ar append
+# kas ir dzeja divi nosacījumi
+# ir vismaz kaut kas tātad pēc rinda.strip() garums ar len būs > 0
+# otrs nosacījums: rinda nesatur ***
+
+# saglabājam jauno sarakstu jaunā failā veidenbaums_clean.txt ar writelines
+
+# alternatīva var uzreiz atvērt divus failus veidenbaums.txt un jauno 
+# tad var iztikt bez saraksta
