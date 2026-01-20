@@ -189,3 +189,60 @@ vidējais = sum(skaitli) / len(skaitli)
 print("Skaitļu vidējais:", vidējais)
 # noapaļausim līdz 4 zīmēm aiz komata
 print("Skaitļu vidējais noapaļots:", round(vidējais, 4))
+
+# pieliksim Annu mūsu sarakstam
+saraksts.append("Anna")
+print(saraksts)
+# un pieliksim Zigurdu
+saraksts.append("Zigurds")
+print(saraksts)
+# ja ir visi string saraksta tad var izmantot min un max
+print("Alfabētiski pirmais vārds:", min(saraksts))
+# pēdejais tāpat
+print("Alfabētiski pēdējais vārds:", max(saraksts))
+
+# mēs varam arī sakarto sarakstus kuriem visas vērtības ir savstarpēji salīdzināmas
+# varam kārtot visu string sarakstus
+sakartots_saraksts = sorted(saraksts)
+print("Sakārtots saraksts:", sakartots_saraksts)
+# tikai jāatcerās ka lekskigrafiski kārtojot Lielie burti ir pirms mazajiem
+# tas tāpēc ka kārtojot tiek izmantotat ASCII tabula angļu burtiem
+# https://en.wikipedia.org/wiki/ASCII
+# un visiem burtiem Unicode tabula
+# pieliksim Ģirtu klāt pie oriģinālā saraksta
+saraksts.append("Ģirts")
+print(saraksts)
+saraksts.append("Baiba")
+print(saraksts)
+# kārtojot Ģirts būs pēdejais
+atkal_kartots_saraksts = sorted(saraksts)
+print("Atkal kārtots saraksts:", atkal_kartots_saraksts)
+# Kāpēc jo Ģ kods ir 290 kas ir aiz Z koda
+print("Z unicode ", ord("Z")) # Z kods ir 90
+print("Ģ unicode ", ord("Ģ")) # ģ kods ir 290
+
+
+# mēs varam arī izmantot ciklu lai ietu cauri sarakstam pa vienam elementam atsevišķi
+# iesim cauri sarakstam
+for vards in saraksts: # vards tātad ir manis izvēlēts cikla mainīgais
+    print("Patreizējais vārds ko redzam ir:", vards)
+    # es varu darīt kaut ko vēl šeit ar šo vardu
+
+# ja vajag indeksu tad ir viens klasisks veids  un viens Python veids
+# sākam ar klasisko
+for i in range(len(saraksts)): # atceramies range sāk no 0 līdz garumam neizskaitot garumu
+    print(f"Vards ar indeksu {i} ir {saraksts[i]}")
+
+# tagad Python veids ar enumerate
+for indekss, vards in enumerate(saraksts): # enumerate dod mums gan indeksu gan vērtību
+    # tātad šeit man ir pieejams gan indekss gan vārds ko patlaban varam apstrādam
+    print(f"Vards ar indeksu {indekss} ir {vards}")
+
+# bieži vajag kaut kāda filtrus 
+# teiksim gribu visus vārdus kuros ir a burts
+a_vardi = [] # tipiski sākam ar tukšu sarakstu
+for vards in saraksts:
+    if "a" in vards: # šeit varam lietot kādu vien loģiku gribam
+        print("Atrādam a ir vārdā", vards)
+        a_vardi.append(vards) # pievienojam to vārdam sarakstā
+print("Vārdi ar a burtiem:", a_vardi)
