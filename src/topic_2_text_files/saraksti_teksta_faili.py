@@ -246,3 +246,38 @@ for vards in saraksts:
         print("Atrādam a ir vārdā", vards)
         a_vardi.append(vards) # pievienojam to vārdam sarakstā
 print("Vārdi ar a burtiem:", a_vardi)
+
+# kas tad īsti ir teksta fails?
+# teksta fails ir vienkāršs fails kurā ir glabāts teksts, kuru var lasīt un rediģēt ar teksta redaktoru
+# teksta faili parasti izmanto .txt paplašinājumu bet tas galīgi nav obligāti
+# pēc savas būtības 99% programmu pirmkoda arī ir teksta faili tikai ar citu paplašinājumu
+# piemēram šis pats Python fails ar .py paplašinājumu arī ir teksta
+# jo to var lasīt, rediģēt cilvēks
+
+# tātad ja mēs zinam ka mums turpat kur mūsu .py fails ir arī kāds .txt fails 
+# to var atvērt vienkārši:
+
+with open("the_choice_yeats.txt") as file: # file ir vienkārši mainīgais
+    # te fails atvērts
+    text = file.read() # ielasam visu saturu uz kuru norāda text mainīgais
+    # te fails joprojām atvērts
+# te fails ir slēgts (automāisks close)
+# tagad fails ir brīvs, kāds cits var izmantot
+# mums ir teksts
+print(text) # note how some symbols do not look quite right
+
+# lai salabotu, gandrīz vienmēr izmantojam UTF-8 kodējumu Unicode simboliem
+with open("the_choice_yeats.txt", encoding="utf-8") as f: # f is is okay for short variable
+    correct_text = f.read()
+# again file is closed here
+
+print(correct_text)
+
+# Latviešu teksta failiem encoding="utf-8" ir obligāts, ja vien nav 90gadu faili
+
+# var būt ērtāk nolasīt atsevišķās rindiņās kā sarakstu, jo tad var apstrādāt pa rindiņai
+with open("the_choice_yeats.txt", encoding="utf-8") as f:
+    all_rows = f.readlines() # nolasa visas rindiņas kā sarakstu ar rindiņu sarakstu
+# atkal fails ir ciet bet mums jau ir dati
+
+print(all_rows) # tas ir saraksts ar stringiem
