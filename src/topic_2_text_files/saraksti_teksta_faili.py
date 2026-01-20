@@ -178,3 +178,14 @@ except ValueError:
 # Filozofiski runājot saraksti paradzēti homogēniem datiem, bet Python saraksti var saturēt jauktus datus
 jaukts_saraksts = ["Oskars", 25, 3.14, True] # vienā sarakstā glaba dažāda tipa datus string, int, float, bool
 print(jaukts_saraksts) # tā var, bet tad pazūd dažas priekšrocības
+
+# ja man ir vienāda tipa  dati tad varu darīt dažas ērtas darbības
+# piem skaitļiem man ir sum, min, max
+print("Mazākais skaitlis", min(skaitli)) # min nestrādātu ar miksētiem ne skaitļu tipiem
+print("Lielākais skaitlis", max(skaitli)) # max nestrādātu ar miksētiem ne skaitļu tipiem
+print("Skaitļu summa", sum(skaitli)) # sum nestrādātu ar miksētiem ne skaitļu tipiem
+# vidēju arī tagad viegli aprēķināt
+vidējais = sum(skaitli) / len(skaitli)
+print("Skaitļu vidējais:", vidējais)
+# noapaļausim līdz 4 zīmēm aiz komata
+print("Skaitļu vidējais noapaļots:", round(vidējais, 4))
