@@ -174,3 +174,7 @@ try:
     print(f"Skaitlis 9999 ir ar indeksu {indekss}.")
 except ValueError:
     print("Skaitlis 9999 nav sarakstā.")
+
+# Filozofiski runājot saraksti paradzēti homogēniem datiem, bet Python saraksti var saturēt jauktus datus
+jaukts_saraksts = ["Oskars", 25, 3.14, True] # vienā sarakstā glaba dažāda tipa datus string, int, float, bool
+print(jaukts_saraksts) # tā var, bet tad pazūd dažas priekšrocības
