@@ -121,3 +121,43 @@ print(saraksts[-5000:9000]) # ja nav tik daudz elementu, vienkārši atgriež vi
 # kā būtu ar apgrieztu sarakstu? tam var izmanot negatīvu indeksu
 aggriezts = skaitli[::-1] # no sākuma līdz beigām ar soli -1
 print(aggriezts) # jauns saraksts kas sākas ar 19 un iet uz leju
+
+# mēs mākam pievienot elementus sarakstam ar append
+# kā būtu ar dzēšanu?
+# izmantojam del atslēgvārdu
+del skaitli[1] # dzēšam otro elementu ar indeksu 1
+print(skaitli)
+# tagad ar indeksu 1 būs skaitlis 2
+print(skaitli[1]) # šeit būs 2 jo 1 ir izdzēsts
+
+# ja gribam izdēst teiksim no 5 līdz 7 elementam?
+del skaitli[5:8] # dzēšam elementus no indeksa 5 līdz 8 (8 nav iekļauts)
+print(skaitli)
+
+# kā būtu ar jauna saraksta pievienošanu beigās
+jauni_skaitli = [100, 101, 102]
+skaitli += jauni_skaitli # šeit mēs pievienojam jauno sarakstu esošajam sarakstam
+# iepriekšējā rindiņa ir līdzīga šādai: skaitli = skaitli + jauni_skaitli
+print(skaitli)
+
+# mēs varam arī mainīt kāda elementa vērtību
+# mums patlaban elements ar indeksu 4 (5tais elements) ir arī 5
+print("Pirms nomaiņas:", skaitli[4])
+skaitli[4] = 555 # mainām 5to elementu uz 555, var mainīt uz jebko
+print("Pēc nomaiņas:", skaitli[4])
+print(skaitli)
+
+# pārbaude vai kāds elements eksistē
+# vai Valdis ir sarakstā?
+if "Valdis" in saraksts:
+    print("Jā, Valdis ir sarakstā.")    
+else:
+    print("Nē, Valdis nav sarakstā.")
+
+# vai Jānis ir sarakstā?
+if "Jānis" in saraksts:
+    print("Jā, Jānis ir sarakstā.") 
+else:
+    print("Nē, Jānis nav sarakstā.")
+
+# jāpiemin ka ļoti lielos sarakstos šāda pārbaude var būt lēna jo Python pārbauda katru elementu pēc kārtas
