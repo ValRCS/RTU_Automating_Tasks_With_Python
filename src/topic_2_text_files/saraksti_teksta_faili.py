@@ -349,3 +349,60 @@ print("Tīrs Yeats pieejams clean_yeats.txt!")
 
 # alternatīva var uzreiz atvērt divus failus veidenbaums.txt un jauno 
 # tad var iztikt bez saraksta
+
+# atveram veidenbaums.txt
+
+with open("veidenbaums.txt", encoding="utf-8") as filein:
+    # šoreiz ielasīsim visas rindiņas
+    all_rows = filein.readlines()
+    # darbs ar failu beidzies
+# fails ir ciet šeit
+
+# izdrukāsim cik tad mums ir rindiņas "netīrājā" failā
+print("Mums ir {len(all_rows)} rindiņas") # tas nebūs tas ko gribam jo uztverts  burtiski
+print(f"Mums ir {len(all_rows)} rindiņas") # izmantojam f-strings formatējumam tad var likt {mainīgo vai kādu darbību}
+
+
+tikai_dzeja = [] # sākam ar tukšu sarakstu
+
+for rinda in all_rows:
+    # šeit mums būs secīga pa vienai cikls dod iespēju apstrādāt kārtējo rindiņu sākot ar pirmo
+    # mums ir divi nosacījumi
+    # rinda pēc strip jābut vismaz 1 tas ir len > 0
+    # otrs rindā nevar būt ***
+    if len(rinda.strip()) > 0 and not "***" in rinda:
+        # šeit mēs zinam ka mums ir derīga rinda
+        # atliek tik pievienot derīgo rindu sarakstam
+        tikai_dzeja.append(rinda)
+    # else nav vajadzīgs jo mēs ar ne-dzeju neko nedaram
+
+# šeit mums ir tīras dzejas rindas, cik viņas būs?
+print(f"Mums ir {len(tikai_dzeja)} rindas ar dzeju")
+
+# kā izdrukāt pirmās piecas uz ekrāna?
+for rinda in tikai_dzeja[:5]: # mēs varam uzreiz iedot ciklam jau nogrieztu mazāku sarakstu šeit pirmie 5 elementi
+    print(rinda, end="") # end="" lai neizdrukā vēl vienu tukšu rindu jo rinda jau beidzas ar \n
+
+# ielikeam *****
+print("*"*40) # 40 zvaigznītes
+
+# kā būtu ar pēdejām 7 rindiņām?
+for rinda in tikai_dzeja[-7:]:
+    print(rinda, end="") # end="" lai neizdrukā vēl vienu tukšu rindu jo rinda jau beidzas ar \n
+
+# tagad saglabājam ar writelines
+with open("veidenbaums_clean.txt", mode="w", encoding="utf-8") as fileout:
+    fileout.writelines(tikai_dzeja) # atkal lai izmantot writelines jābut sarakstam 
+
+# mēs varam to pašu panākt neko neglabājot
+with open("veidenbaums.txt", encoding="utf-8") as filein:
+    with open("veidenbaums_also_clean.txt", mode="w", encoding="utf-8") as fileout:
+        # abi faili atvērti varam sākt rakstīt izejoša
+        for row in filein: # ejam pa viena rindai cauri
+            if len(row.strip()) > 0 and not "***" in row:
+                # zinam ka ir laba rinda tad rakstam iekšā
+                fileout.write(row)
+# te arī viss slēgts un darbs beigts
+
+print("Esam ieguvuši tīru dzeju!")
+
