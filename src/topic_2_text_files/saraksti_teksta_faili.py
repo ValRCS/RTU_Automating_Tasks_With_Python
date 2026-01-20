@@ -161,3 +161,16 @@ else:
     print("Nē, Jānis nav sarakstā.")
 
 # jāpiemin ka ļoti lielos sarakstos šāda pārbaude var būt lēna jo Python pārbauda katru elementu pēc kārtas
+
+# atradīsm konkrētu indeksu kādam elementam
+# piemēram 16 skaitļu sarakstā
+indekss = skaitli.index(16) # atrod indeksa vērtību elementam 16
+print(f"Skaitlis 16 ir ar indeksu {indekss}.")
+
+# ja zinam ka var nebūt tad jālieto try except atkal
+try:
+    indekss = skaitli.index(9999) # mēģinam atrast indeksu elementam 9999
+    # ja kļūdas nav tad nākošā rindiņa izpildās, bet ja bija kļūda tad izpildās except bloks
+    print(f"Skaitlis 9999 ir ar indeksu {indekss}.")
+except ValueError:
+    print("Skaitlis 9999 nav sarakstā.")
